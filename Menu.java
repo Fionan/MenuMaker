@@ -84,6 +84,19 @@ public class Menu {
         menuItems.add(menuItem);
     }
 
+
+    public void addMenuItem(String description,Menu submenu){
+        menuItems.add(new MenuItem(description,submenu));
+
+
+    }
+
+    public void addMenuItem(String description,Runnable function){
+        menuItems.add(new MenuItem(description,function));
+
+    }
+
+
     public void setValue(String key, String value) {
         Global_Values.put(key, value);
 
