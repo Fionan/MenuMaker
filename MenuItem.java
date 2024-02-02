@@ -17,6 +17,8 @@ public class MenuItem {
     private Runnable action;
     private boolean isVisible;
 
+    private boolean completed =false;
+
 
 
     /**
@@ -152,5 +154,15 @@ public class MenuItem {
     return subMenu != null;
     }
 
+    public boolean isCompleted() {
+        return completed;
+    }
 
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    public void success() {
+        setCompleted(true);
+    }
 }

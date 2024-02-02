@@ -124,13 +124,16 @@ public class Menu {
 
         return true;
     }
+
     private void displayMenu() {
         out.println("\n--- " + this.menuName + " ---");
 
         List<MenuItem> visibleMenuItems = getVisibleMenuItems();
 
         for (int i = 0; i < visibleMenuItems.size(); i++) {
-            out.println((i + 1) + ". " + visibleMenuItems.get(i).getDescription());
+
+            MenuItem mi = visibleMenuItems.get(i);
+            out.println((i + 1) + ". " + mi.getDescription()+completed(mi));
         }
 
         int lastIndex = visibleMenuItems.size() + 1;
@@ -192,7 +195,11 @@ public class Menu {
         // If the displayed choice is not within valid range, return -1 or handle accordingly
         return -1;
     }
-
+    private String completed(MenuItem mi){
+    //part of Cosmetic , simply adding a tick if this is marked as completed
+        if(mi.isCompleted())return " " + TICK;
+        return "";
+    };
 
     public void close() {
         scanner.close();
@@ -304,10 +311,14 @@ public class Menu {
             // Optionally, you can print all the entered values
             for (String key : keys) {
                 out.println("Key '" + key + "' has value: " + getValue(key));
+
             }
         });
+
         addMenuItem(menuItem);
     }
+
+
 
 
 
