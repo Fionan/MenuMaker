@@ -1,4 +1,4 @@
-package menumaker;
+package MenuMaker;
 
 
  final  class  AlwaysViewableCondition implements MenuItemCondition{

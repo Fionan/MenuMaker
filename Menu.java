@@ -1,4 +1,4 @@
-package menumaker;
+package MenuMaker;
 
 import static java.lang.System.out;
 
@@ -16,7 +16,7 @@ import java.util.Scanner;
 public class Menu {
 
     static final String  DEFAULT_MENU_NAME = "Menu";
-
+    static final String TICK = "\u2713";
 
     public enum InputType {
         STRING,
@@ -41,7 +41,7 @@ public class Menu {
 
 
     private Menu parentMenu;
-    private List<MenuItem> menuItems;
+    private List<MenuMaker.MenuItem> menuItems;
     private static Scanner scanner = new Scanner(System.in);
     private static final Map<String, String> Global_Values= new HashMap<>();
     private String menuName = DEFAULT_MENU_NAME;
