@@ -126,6 +126,7 @@ public class Menu {
     }
 
     private void displayMenu() {
+        clearScreen();
         out.println("\n--- " + this.menuName + " ---");
 
         List<MenuItem> visibleMenuItems = getVisibleMenuItems();
@@ -158,6 +159,7 @@ public class Menu {
     public void run() {
         boolean exit = false;
         while (!exit) {
+
             displayMenu();
             int choice = readUserChoice();
 
@@ -389,4 +391,9 @@ public class Menu {
     }
 
 
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
 }
+
