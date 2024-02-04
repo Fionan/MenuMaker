@@ -249,13 +249,13 @@ public class Menu {
     }
 
     public Date getUserInputDate() {
-        out.print("Enter date (DD/MM/YYYY): ");
+        out.print("Enter date (DD-MM-YYYY): ");
         String dateString = scanner.nextLine();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         try {
             return dateFormat.parse(dateString);
         } catch (ParseException e) {
-            out.println("Invalid date format. Please enter a date in the format DD/MM/YYYY.");
+            out.println("Invalid date format. Please enter a date in the format DD-MM-YYYY.");
             return getUserInputDate();
         }
     }
